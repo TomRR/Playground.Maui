@@ -84,12 +84,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\TodoPage.xaml.cs">
-	    <DependentUpon>TodoPage.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiAsset Update="Resources\Raw\ReactTodoApp\asset-manifest.json">
 	    <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
 	  </MauiAsset>
@@ -147,9 +141,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\TodoPage.xaml">
+	  <MauiXaml Update="TodoApp\TodoPage.xaml">
+	    <SubType>Designer</SubType>
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="React\TodoApp\TodoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="React\TodoPage.xaml">
+	    <SubType>Designer</SubType>
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="TodoApp\TodoPage.xaml.cs">
+	    <DependentUpon>TodoPage.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="React\TodoPage.xaml.cs">
+	    <DependentUpon>TodoPage.xaml</DependentUpon>
+	    <SubType>Code</SubType>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

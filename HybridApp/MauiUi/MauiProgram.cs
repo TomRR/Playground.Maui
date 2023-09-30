@@ -1,5 +1,4 @@
-﻿using MauiUi.ViewModels;
-using MauiUi.Views;
+﻿using MauiUi.React.TodoApp;
 using Microsoft.Extensions.Logging;
 
 namespace MauiUi;
@@ -31,7 +30,6 @@ public static class Extensions
 {
     public static IServiceCollection AddDependencies(this IServiceCollection services)
     {
-        services.AddTransient<TodoViewModel>();
         services.AddTransient<TodoPage>();
 
         return services;
